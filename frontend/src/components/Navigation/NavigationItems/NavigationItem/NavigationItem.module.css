@@ -1,0 +1,32 @@
+.NavigationItem {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.NavigationItem a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    border-bottom: 4px solid transparent;
+}
+
+.NavigationItem span {
+    font-family: "Stoke", serif;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.NavigationItem a:hover,
+.NavigationItem a:active,
+.NavigationItem a.active {
+    background-color: #8F5C2C;
+    border-bottom: 4px solid #40A4C8;
+    color: white;
+}
