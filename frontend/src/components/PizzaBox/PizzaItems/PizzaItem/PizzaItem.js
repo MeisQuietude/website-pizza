@@ -11,9 +11,7 @@ const PizzaItem = ( props ) => {
     return (
         <div className={css.PizzaItem}>
             <h3>{title}</h3>
-            <p>
-                <hr />
-            </p>
+            <hr />
             <p className={css.description}><i>{description}</i></p>
             <p className={css.buttonContainer}>
                 <button>Add to Cart</button>

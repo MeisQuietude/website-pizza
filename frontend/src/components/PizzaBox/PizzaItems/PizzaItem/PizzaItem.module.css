@@ -40,3 +40,7 @@ p.buttonContainer {
 .PizzaItem button:hover {
     opacity: 0.8;
 }
+
+hr {
+    width: 90%;
+}
