@@ -1,4 +1,4 @@
 .Main {
     /* Toolbar height = 96px */
-    margin-top: calc(96px + 16px);
+    margin: calc(96px + 36px) 10% 0;
 }

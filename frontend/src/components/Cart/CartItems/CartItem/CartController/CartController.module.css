@@ -1,0 +1,29 @@
+.CartController {
+    display: flex;
+    width: 20%;
+    margin: 5px 0;
+    padding: 10px;
+    box-shadow: 2px 4px 8px 2px rgba(214, 140, 2, 0.4);
+}
+
+.CartController button {
+    border: none;
+    width: 50%;
+    height: 100%;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 15px;
+    margin: 0 5px;
+    font-size: 1.2rem;
+}
+
+.CartController button.red {
+    background-color: #f44336;
+}
+
+.CartController button.green {
+    background-color: #4CAF50;
+}
