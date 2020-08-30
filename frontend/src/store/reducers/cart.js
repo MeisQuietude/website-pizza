@@ -18,25 +18,27 @@ const addPizzaToCart = ( state, payload, limitValue = 15 ) => {
     const cart = { ...state.cart };
     cart[pizza] = (state.cart[pizza] || 0) + value;
 
-    return updateObject(state, {
-        cart,
-    });
+    return updateObject(state, { cart });
 };
 
-const removePizzaFromCart = ( state, payload, minimalValue = 0 ) => {
+const removePizzaFromCart = ( state, payload, minimalValue = 1 ) => {
     const pizza = payload.key;
     const value = payload.value;
 
-    if ( !state.cart[pizza] || state.cart[pizza] <= minimalValue ) {
+    if ( state.cart[pizza] === undefined ) {
         return state;
+    }
+
+    if ( state.cart[pizza] <= minimalValue ) {
+        const cart = { ...state.cart };
+        delete cart[pizza];
+        return updateObject(state, { cart });
     }
 
     const cart = { ...state.cart };
     cart[pizza] = (state.cart[pizza] >= value) ? state.cart[pizza] - value : 0;
 
-    return updateObject(state, {
-        cart,
-    });
+    return updateObject(state, { cart });
 };
 
 const reducer = ( state = initialState, action ) => {
