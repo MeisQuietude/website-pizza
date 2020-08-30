@@ -7,8 +7,10 @@ const PizzaItems = ( props ) => (
         {props.data.map(pizza =>
             <PizzaItem
                 key={pizza.key}
+                data={{...pizza}}
                 title={pizza.title}
-                description={pizza.description} />)}
+                description={pizza.description}
+                addHandler={props.handlers.add} />)}
     </div>
 );
 

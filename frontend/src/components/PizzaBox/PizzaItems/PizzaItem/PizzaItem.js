@@ -4,7 +4,7 @@ import css   from "./PizzaItem.module.css";
 const descriptionLengthLimit = 170;
 
 const PizzaItem = ( props ) => {
-    let { title, description } = props;
+    let { title, description } = props.data;
     if ( description.length > descriptionLengthLimit ) {
         description = description.slice(0, descriptionLengthLimit) + "...";
     }
@@ -14,7 +14,7 @@ const PizzaItem = ( props ) => {
             <hr />
             <p className={css.description}><i>{description}</i></p>
             <p className={css.buttonContainer}>
-                <button>Add to Cart</button>
+                <button onClick={props.addHandler.bind(null, props.data.key)}>Add to Cart</button>
             </p>
         </div>
     );
