@@ -5,11 +5,9 @@ import PizzaBox from "./containers/PizzaBox/PizzaBox";
 class App extends React.Component {
     render() {
         return (
-            <div>
-                <Layout>
-                    <PizzaBox />
-                </Layout>
-            </div>
+            <Layout>
+                <PizzaBox />
+            </Layout>
         );
     }
 }

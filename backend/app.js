@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const logger = require("morgan");
 
 const pizzasRouter = require("./routes/pizzas");
@@ -12,6 +13,8 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use("/pizzas", pizzasRouter);
 app.use("/users", usersRouter);
+
+app.use(cors());
 
 // error handler
 app.use(function ( err, req, res, next ) {

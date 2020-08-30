@@ -1,0 +1,46 @@
+.PizzaItem {
+    display: flex;
+    flex-flow: column;
+    width: 20%;
+    margin: 0 15px;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.PizzaItem h3 {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.PizzaItem p {
+    margin-bottom: 0;
+}
+
+p.description {
+    padding: 5px;
+    margin-bottom: 25px;
+}
+
+p.buttonContainer {
+    margin-top: auto;
+}
+
+.PizzaItem button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #b34f05;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.PizzaItem button:hover {
+    opacity: 0.8;
+}
+
+hr {
+    width: 90%;
+}
