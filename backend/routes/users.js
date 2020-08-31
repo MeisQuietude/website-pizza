@@ -64,7 +64,7 @@ router.post("/token", withAuth, function ( req, res, next ) {
 
     if ( req.login ) {
         const user = db.GET("users")[req.login];
-        if (user) {
+        if ( user ) {
             data = {
                 user: {
                     ...user,
@@ -83,12 +83,8 @@ router.post("/update-cart", withAuth, function ( req, res, next ) {
         return res.end();
     }
 
-    const cart = { ...req.body.cart };
+    const { cart } = req.body;
     let user = db.GET("users")[req.login];
-
-    console.log("Carts");
-    console.log(user.cart);
-    console.log(cart);
 
     user = {
         ...user,
