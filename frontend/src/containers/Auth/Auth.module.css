@@ -1,0 +1,40 @@
+.AuthButtons {
+    height: 100%;
+}
+
+.AuthButtons button {
+    height: 100%;
+    width: 100px;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-bottom: 4px solid transparent;
+}
+
+.AuthButtons button.signin {
+    background-color: #66a627;
+}
+.AuthButtons button.signin:hover {
+    background-color: #375a10;
+    border-bottom: 4px solid #40A4C8;
+}
+
+.AuthButtons button.signout {
+    background-color: #a6453f;
+}
+.AuthButtons button.signout:hover {
+    background-color: #75241d;
+    border-bottom: 4px solid #40A4C8;
+}
+
+/*.NavigationItem a:hover,*/
+/*.NavigationItem a:active,*/
+/*.NavigationItem a.active {*/
+/*    background-color: #8F5C2C;*/
+/*    border-bottom: 4px solid #40A4C8;*/
+/*    color: white;*/
+/*}*/

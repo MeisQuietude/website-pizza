@@ -9,13 +9,15 @@ const POST = ( key, value ) => {
     return state[key];
 };
 
-const PUT = ( key, value ) => {
-    if ( Array.isArray(state[key]) ) {
-        state[key].push(value);
+const PUT = ( model, key, value ) => {
+    if ( Array.isArray(state[model][key]) ) {
+        state[model][key].push(value);
         return value;
     }
 
-    return null;
+    // it is an object
+    state[model][key] = value;
+    return value;
 };
 
 const DELETE = ( key, index ) => {

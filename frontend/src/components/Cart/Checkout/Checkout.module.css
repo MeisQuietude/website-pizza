@@ -1,0 +1,34 @@
+.Checkout {
+    width: 90%;
+    box-shadow: 2px 4px 8px 2px rgba(214, 140, 2, 0.4);
+}
+
+.Checkout div {
+    margin: 0 45px;
+    font-size: 1.6rem;
+}
+
+.Checkout button {
+    width: 100%;
+    height: 50%;
+    border-radius: 15px;
+    margin: 25px 0;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.5rem;
+}
+
+.Checkout input {
+    display: block;
+    border: none;
+    background-color: #203d88;
+    color: white;
+    border-radius: 4px 4px 15px 15px;
+    font-size: 1.2rem;
+    word-wrap: break-word;
+}

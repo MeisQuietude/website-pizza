@@ -49,6 +49,10 @@ const initialState = {
             price: 12.99,
         },
     ],
+
+    users: {
+        // login: { password, cart }
+    },
 };
 
 const storeInMemory = initialState;
