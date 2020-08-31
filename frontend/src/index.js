@@ -1,17 +1,24 @@
-import React                                     from "react";
-import ReactDOM                                  from "react-dom";
-import { BrowserRouter }                         from "react-router-dom";
-import { combineReducers, compose, createStore } from "redux";
-import { Provider }                              from "react-redux";
-import * as serviceWorker                        from "./serviceWorker";
-import reducers                                  from "./store/reducers";
-import App                                       from "./App";
+import React                                                      from "react";
+import ReactDOM                                                   from "react-dom";
+import { BrowserRouter }                                          from "react-router-dom";
+import { applyMiddleware, combineReducers, compose, createStore } from "redux";
+import { Provider }                                               from "react-redux";
+import thunk                                                      from "redux-thunk";
+import logger                                                     from "redux-logger";
+import * as serviceWorker                                         from "./serviceWorker";
+import reducers                                                   from "./store/reducers";
+import App                                                        from "./App";
 import "./index.css";
 
-const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
+const composeEnhancers = (typeof window !== "undefined" && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
 
 const rootReducer = combineReducers(reducers);
-const store = createStore(rootReducer, composeEnhancers());
+const store = createStore(rootReducer, composeEnhancers(
+    applyMiddleware(
+        thunk,
+        logger,
+    ),
+));
 
 ReactDOM.render(
     <Provider store={store}>
