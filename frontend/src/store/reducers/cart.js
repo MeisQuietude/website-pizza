@@ -41,6 +41,16 @@ const removePizzaFromCart = ( state, payload, minimalValue = 1 ) => {
     return updateObject(state, { cart });
 };
 
+const updateCart = ( state, payload ) => {
+    const cart = payload.cart || {};
+
+    if ( Object.keys(cart).length ) {
+        return updateObject(state, { cart });
+    }
+
+    return state;
+};
+
 const reducer = ( state = initialState, action ) => {
     const { type, payload } = action;
 
@@ -49,6 +59,8 @@ const reducer = ( state = initialState, action ) => {
             return addPizzaToCart(state, payload);
         case actionTypes.DEC_ORDER_PIZZA:
             return removePizzaFromCart(state, payload);
+        case actionTypes.UPDATE_CART:
+            return updateCart(state, payload);
         default:
             return state;
     }

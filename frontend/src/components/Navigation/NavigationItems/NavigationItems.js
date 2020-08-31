@@ -2,6 +2,7 @@ import React          from "react";
 import { connect }    from "react-redux";
 import NavigationItem from "./NavigationItem/NavigationItem";
 import css            from "./NavigationItems.module.css";
+import Auth           from "../../../containers/Auth/Auth";
 
 const NavigationItems = ( props ) => {
     const cartQuantity = Object.values(props.cart)
@@ -13,8 +14,7 @@ const NavigationItems = ( props ) => {
             <NavigationItem link="/cart" exact>
                 Cart {cartQuantity > 0 ? <span>({cartQuantity})</span> : null}
             </NavigationItem>
-            <NavigationItem link="/login" exact>Log in</NavigationItem>
-            <NavigationItem link="/logout" exact>Log out</NavigationItem>
+            <Auth />
         </ul>
 
     );
