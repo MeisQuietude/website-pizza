@@ -6,7 +6,7 @@ import { decrementOrderPizza, incrementOrderPizza } from "../../store/actions/ca
 class Cart extends Component {
     render() {
         const mapItemsToCart = Object.keys(this.props.cart).map(key => {
-            const pizza = this.props.pizzas.find(e => e.key === key);
+            const pizza = this.props.pizzas.find(e => e.key === key) || {};
             const count = this.props.cart[key];
 
             return {
@@ -38,7 +38,7 @@ class Cart extends Component {
 
 const mapStateToProps = state => {
     return {
-        pizzas: state.pizzaBox.pizza,
+        pizzas: state.pizzaBox.pizza || [],
         cart: state.cart.cart || {},
     };
 };
