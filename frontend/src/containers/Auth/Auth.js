@@ -4,6 +4,7 @@ import AuthForm              from "../../components/AuthForm/AuthForm";
 import Modal                 from "../../components/UI/Modal/Modal";
 import { signOut, signUpIn } from "../../store/actions/auth";
 import { updateCart }        from "../../store/actions/cart";
+import css                   from "./Auth.module.css";
 
 class Auth extends Component {
     constructor( props ) {
@@ -82,8 +83,8 @@ class Auth extends Component {
                     this.props.updateCart(cart);
                     this.closeModal();
                 }
-                if ( payload.authError ) {
-                    this.setState({ authError: payload.authError });
+                if ( payload.data.authError ) {
+                    this.setState({ authError: payload.data.authError });
                 }
             })
             .catch(error => {
@@ -98,13 +99,15 @@ class Auth extends Component {
     render() {
         return (
             <React.Fragment>
-                {
-                    (this.props.isAuth) ?
-                        <div onClick={this.authSignOut}>Sign Out</div> :
-                        <div onClick={this.openModal}>Sign in</div>
-                }
+                <div className={css.AuthButtons}>
+                    {
+                        (this.props.isAuth) ?
+                            <button className={css.signout} onClick={this.authSignOut}>Sign Out</button> :
+                            <button className={css.signin} onClick={this.openModal}>Sign In</button>
+                    }
+                </div>
                 <Modal show={this.state.showModal} closeModal={this.closeModal}>
-                    {(this.state.authError) ? <p>{this.state.authError}</p> : null}
+                    {(this.state.authError) ? <h4>{this.state.authError}</h4> : null}
                     <AuthForm
                         payload={{ cart: this.props.cart, login: this.state.login, password: this.state.password }}
                         handlers={{

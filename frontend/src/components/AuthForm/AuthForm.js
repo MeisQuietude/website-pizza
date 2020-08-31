@@ -11,7 +11,8 @@ const AuthForm = props => (
                     name="login"
                     type="text"
                     onChange={props.handlers.login}
-                    value={props.payload.login} />
+                    value={props.payload.login}
+                    required />
             </div>
             <div>
                 <label htmlFor="password">Password</label>
@@ -20,7 +21,8 @@ const AuthForm = props => (
                     name="password"
                     type="password"
                     onChange={props.handlers.password}
-                    value={props.payload.password} />
+                    value={props.payload.password}
+                    required />
             </div>
             <div>
                 <input type="submit" value="Continue" />

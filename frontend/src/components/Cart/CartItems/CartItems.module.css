@@ -1,5 +1,5 @@
 .CartItems {
     display: flex;
     flex-flow: column;
-    width: 70%;
+    width: 90%;
 }
