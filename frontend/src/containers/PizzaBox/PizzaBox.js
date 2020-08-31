@@ -30,6 +30,21 @@ class PizzaBox extends Component {
             });
     }
 
+    componentDidUpdate( prevProps, prevState, snapshot ) {
+        if ( prevProps.cart !== this.props.cart ) {
+            const cart = this.props.cart;
+            const data = { cart };
+
+            return fetch("/users/update-cart", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+        }
+    }
+
     render() {
         return (
             <div>
@@ -44,6 +59,12 @@ class PizzaBox extends Component {
     }
 }
 
+const mapStateToProps = state => {
+    return {
+        cart: state.cart.cart,
+    };
+};
+
 const mapDispatchToProps = dispatch => {
     return {
         addPizzaToCart: ( pizzaKey ) => dispatch(incrementOrderPizza(pizzaKey)),
@@ -52,4 +73,4 @@ const mapDispatchToProps = dispatch => {
 };
 
 
-export default connect(null, mapDispatchToProps)(PizzaBox);
+export default connect(mapStateToProps, mapDispatchToProps)(PizzaBox);
