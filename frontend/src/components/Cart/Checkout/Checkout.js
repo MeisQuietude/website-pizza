@@ -2,7 +2,7 @@ import React from "react";
 import css   from "./Checkout.module.css";
 
 const Checkout = ( props ) => {
-    const CUR = props.currency && props.currency.label || "$";
+    const CUR = (props.currency && props.currency.label) || "$";
 
     return (
         <div className={css.Checkout}>
